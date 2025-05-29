@@ -1,0 +1,77 @@
+
+.cat {
+    
+    align-items: center;
+    gap: 10px;
+    display: none;
+   }
+  
+  .scroll-btn {
+    font-size: 24px;
+    padding: 10px;
+    background-color: #fff;
+    border: 0px solid #ddd;
+    /* border-radius: 50%; */
+    /* cursor: pointer; */
+    transition: background-color 0.3s;
+  }
+  
+  .scroll-btn:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .scroll-menu {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    width: 80%;
+    /* border-bottom: 1px solid #ddd; */
+    
+  }
+  
+  .menu-item {
+    flex: 0 0 auto;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  
+  .menu-item:hover {
+    color: #000;
+    font-weight: bold;
+  }
+
+  /* kkkkkkkkkkk */
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+input[type="checkbox"] {
+    display: none; /* Hide the regular checkbox */
+}
+label {
+    cursor: pointer;
+    font-size: 15px;
+    transition: transform 0.2s; /* Smooth transition */
+}
+input[type="checkbox"]:checked + label {
+    transform: scale(1.1); /* Scale up icon on selection */
+    color: red;
+}
+.icon {
+    margin-right: 10px;
+    font-size: 14px; /* Base icon size */
+    transition: transform 0.2s;
+}
+
+.cathide{
+  display: flex;
+}
+

@@ -1,0 +1,13 @@
+
+                            <!-- <% if(currentuser && (currentuser._id.toString() == data.owner._id.toString())) { %>
+                                <a class="btn btn-outline-warning me-2" href="/allthing/listing/<%= data._id %>/edit">Click here to edit</a>
+                                <form action="/allthing/listing/<%= data._id %>?_method=delete" method="post">
+                                    <button class="btn btn-danger">Delete</button>
+                                </form>
+                            <% } %> -->
+
+
+                            its add fun to preticular user can acces own post
+
+
+                            data.owner._id.equals(res.locals.currentuser._id)

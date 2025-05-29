@@ -1,0 +1,121 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/allthing/aboutus"><img src="/image/travel india.jpg"  class="profil-image" height="30" alt="" srcset=""></a>
+           
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/allthing">
+            <i class="fa-solid fa-house-chimney" style="color: red;"></i>
+        </a>
+        </li>
+        <li class="nav-item dropdown">
+<% if(currentuser&&currentuser.isAdmin==true){%>  <a class="nav-link" href="/allthing/new">
+  <i class="fa-solid fa-plus"  style="color: red;"></i>   A D D</i>
+</a><%} %>
+
+          
+         
+        </li>
+       <% if(!currentuser) {%>
+        <li class="nav-item ms-auto">
+            <a class="nav-link " href="/user/signin">sign in </a>
+          </li>
+          <li class="nav-item ms-auto">
+              <a class="nav-link " href="/user/signup">sighup</a>
+            </li>
+
+        <% }else{ %>
+            <li class="nav-item ms-auto">
+                <a class="nav-link " href="/user/profile"><b> hello ! </b><%=currentuser.name %></a>
+              </li>
+            <li class="nav-item ms-auto">
+                <a class="nav-link " href="/user/signout">sighnout</a>
+              </li>
+            <% } %>
+
+            <li class="nav-item ms-auto">
+              <a class="nav-link" href="/countribute">
+
+                <% if(currentuser&&currentuser.isAdmin==true){%>  
+                  <i class="fa-solid fa-message" style="color: red;"> &nbsp;&nbsp; </i>suggestion box
+                </a><%}else{ %>
+                  <img src="/image/contibute.png" height="30" alt="" srcset="">countribute
+                  <%} %>
+                </a>
+              </li>
+            </ul>
+          
+                  
+        
+                 
+                   
+
+           
+         
+
+
+
+      
+    
+        <div class="profilediv">
+          <button class="btn btn-outline-success" type="submit"><img  class="profil-image " src=<%= currentuser&&(currentuser.gender=="Male"?"/image/boy.jpg":"/image/girl.jpg")||"/image/images.png" %> alt="" srcset=""></button>
+         <div class="userdetail display-none">
+         
+          <div class="userdata">
+            <% if(currentuser){ %>
+            <div class="name">  <%= currentuser&&currentuser.name %> </div>
+            <div class="email"> <%= currentuser&&currentuser.username %>  </div>
+            <div class="gender"><%= currentuser&&currentuser.gender %> </div>
+            <a href="/user/deleteaccount">delete account</a>
+
+            <% }else{ %>
+              <div>plese login first</div>
+              <% } %>
+          </div>
+         </div>
+        </div>
+      
+<!-- 
+      <div class="filter d-flex px-3">
+        <i class="fa-solid fa-filter filtershape"></i>
+      </div>
+    </div> -->
+
+
+
+    
+</nav>
+
+
+
+
+
+
+
+

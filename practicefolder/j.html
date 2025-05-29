@@ -1,0 +1,2 @@
+const results = await Listing.find({$or: [ { location: { $regex: placetomatch, $options: 'i' } }, { category: { $in: catogary } }]});
+  

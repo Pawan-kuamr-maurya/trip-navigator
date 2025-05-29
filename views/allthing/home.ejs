@@ -1,0 +1,269 @@
+<% layout("allthing/boiler/boiler.ejs") %>
+<body>
+
+<!-- its filter option for select some element -->
+
+    <div class="filter d-flex px-3 " style="float: right; padding-top: 25px; font-size: 20px;">
+        <i class="fa-solid fa-filter filtershape"> SORT</i> 
+      </div>
+    </div>
+    <form action="/allthing/listings/filter" method="post">
+    <div class="filterdiv">
+        <div class="scroll-btn" id="scroll-left"><i class="fa-solid fa-angle-left"></i></div>
+            <input type="text" class="form-control" style="width: 200px;" name="place" id="place" placeholder="name,state,place,..">
+        <div class="scroll-menu" id="scroll-menu">
+            <div class="checkbox-container menu-item ">
+                <input type="checkbox"  id="temple"  name="filselect"  value="Temple">
+                <label for="temple"><i class="fa-solid fa-om"></i> Temple</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox"  id="beach"  name="filselect"  value="Beach">
+                <label for="beach"><i class="fas fa-umbrella-beach icon"></i> Beach</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="hill_station" name="filselect"  value="Hill Station">
+                <label for="hill_station"><i class="fas fa-mountain icon"></i> Hill Station</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="water_park" name="filselect"  value="Water Park">
+                <label for="water_park"><i class="fas fa-water icon"></i> Water Park</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="fort" name="filselect"  value="Fort">
+                <label for="fort"><i class="fa-brands fa-fort-awesome"></i> Fort</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="national_park" name="filselect"  value="National Park">
+                <label for="national_park"><i class="fas fa-tree icon"></i> National Park</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="historical_site" name="filselect"  value="Historical Site">
+                <label for="historical_site"><i class="fas fa-book-open icon"></i> Historical Site</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="museum" name="filselect"  value="Museum">
+                <label for="museum"><i class="fas fa-book icon"></i> Museum</label>
+            </div>
+            
+           
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="mountain_range" name="filselect"  value="Mountain Range">
+                <label for="mountain_range"><i class="fas fa-mountain icon"></i> Mountain Range</label>
+            </div>
+            
+           
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="street_market" name="filselect"  value="Street Market">
+                <label for="street_market"><i class="fas fa-shopping-cart icon"></i> Street Market</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="art_gallery" name="filselect"  value="Art Gallery">
+                <label for="art_gallery"><i class="fas fa-paint-brush icon"></i> Art Gallery</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="theme_park" name="filselect"  value="Theme Park">
+                <label for="theme_park"><i class="fa-thin fa-ferris-wheel"></i>Theme Park</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="nature_reserve" name="filselect"  value="Nature Reserve">
+                <label for="nature_reserve"><i class="fas fa-leaf icon"></i> Nature Reserve</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="skyscraper_observation_deck" name="filselect"  value="Skyscraper Observation Deck">
+                <label for="skyscraper_observation_deck"><i class="fas fa-building icon"></i> Skyscraper Observation Deck</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="monument" name="filselect"  value="Monument">
+                <label for="monument"><i class="fas fa-monument icon"></i> Monument</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="hot_springs" name="filselect"  value="Hot Springs">
+                <label for="hot_springs"><i class="fas fa-hot-tub icon"></i> Hot Springs</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="zoological_park" name="filselect"  value="Zoological Park">
+                <label for="zoological_park"><i class="fas fa-paw icon"></i> Zoological Park</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="wildlife_sanctuary" name="filselect"  value="Wildlife Sanctuary">
+                <label for="wildlife_sanctuary"><i class="fas fa-paw icon"></i> Wildlife Sanctuary</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="adventure_park" name="filselect"  value="Adventure Park">
+                <label for="adventure_park"><i class="fas fa-mountain icon"></i> Adventure Park</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="cultural_village" name="filselect"  value="Cultural Village">
+                <label for="cultural_village"><i class="fas fa-landmark icon"></i> Cultural Village</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="scenic_viewpoint" name="filselect"  value="Scenic Viewpoint">
+                <label for="scenic_viewpoint"><i class="fas fa-eye icon"></i> Scenic Viewpoint</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="amusement_park" name="filselect"  value="Amusement Park">
+                <label for="amusement_park"><i class="fas fa-roller-coaster icon"></i> Amusement Park</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="botanical_garden" name="filselect"  value="Botanical Garden">
+                <label for="botanical_garden"><i class="fas fa-seedling icon"></i> Botanical Garden</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="lakeside_resort" name="filselect"  value="Lakeside Resort">
+                <label for="lakeside_resort"><i class="fas fa-water icon"></i> Lakeside Resort</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="cave" name="filselect"  value="Cave">
+                <label for="cave"><i class="fas fa-cave icon"></i> Cave</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="stadium" name="filselect"  value="Stadium">
+                <label for="stadium"><i class="fas fa-stadium icon"></i> Stadium</label>
+            </div>
+            
+            <div class="checkbox-container menu-item">
+                <input type="checkbox" id="aquarium" name="filselect"  value="Aquarium">
+                <label for="aquarium"><i class="fas fa-fish icon"></i> Aquarium</label>
+            </div>
+        </div>
+        <button type="submit" class="form-control" style="width: 40px;"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <div class="scroll-btn" id="scroll-right"><i class="fa-solid fa-angle-right"></i></div>
+    </div>
+    
+</form>
+
+
+<!-- showing some message  when somthing happen -->
+
+    <% if((error&&error.length)||((message&&message.length))){ %>
+
+      <div class="alert alert-warning alert-dismissible fade show col-6 offset-3 d-flex justify-content-between" role="alert">
+        <div>
+            <strong>Hey!</strong>   <%=error %> <%=message%>
+        </div>
+        <button type="button" class="close btn btn-warning" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+      <% } %>
+
+<div class="container">
+
+    <div id="carouselExampleControls " class="carousel slide " data-ride="carousel" data-interval="3000">
+        <div class="carousel-inner">
+          
+              <% let firstIteration = true; %>
+              <% for (let i = data.length - 1; i >= 0; i--) { %>
+                  <% if (data[i].highlight.istrue) { %>
+                      <a href="/allthing/listing/<%= data[i].id %>"> 
+                          <div class="carousel-item <%= firstIteration ? 'active' : '' %>">
+                              <img class="d-block w-100" src="<%= data[i].image %>" alt="Carousel slide">
+                          </div>
+                      </a>
+                      <% firstIteration = false; // After the first item, set this to false %>
+                  <% } %>
+              <% } %>
+
+
+          
+        
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+        <div class="carousel-caption d-none d-md-block">
+            <h5 style=" color: white;
+      mix-blend-mode: difference;">Special event </h5>
+            <p>click here to view</p>
+          </div>
+      </div>
+</div>
+
+
+<div class="placenearbyyou">
+    <h1 id="nearplaceheading" >  </h1>
+ <div class="container mt-4 nearplace">
+</div></div>
+<hr>
+<!-- out listing start beging ptint -->
+
+
+    
+      <div class="container mt-4">
+        <div class="row" id="row"> <!-- Start the row for Bootstrap grid -->
+            <% const currentDateUTC = new Date();  const oneDayInMillis = 24 * 60 * 60 * 1000;%>
+
+            <% for (let i =  data.length-1; i >= 0; i--) { %> <!-- Loop through your data -->
+                <div class="col-12 col-sm-6 col-md-4 mb-4"> <!-- Responsive column for each card -->
+                 
+                    <a class="homecard" href="/allthing/listing/<%= data[i].id %>">
+                        <div class="card allcard h-100"> <!-- Ensure all cards are of equal height -->
+                            <img src="<%= data[i].image %>" class="card-img-top" alt="..." style="height: 200px; object-fit: cover;">
+ <!-- main image  -->                           
+                            <%  const isOlderThanOneDay = (currentDateUTC - data[i].timestamp) > oneDayInMillis; %>
+                             <!-- <%=data[i].timestamp %> -->
+                            <% if(isOlderThanOneDay){  %>
+                             <%  }else{ %>
+  <!-- new image -->      <img src='/image/new.png' class="new" alt="" srcset="">
+                           
+                                 <%     }  %>
+                            
+                            <div class="card-body d-flex flex-column"> <!-- Flex to allow title and text alignment -->
+                                <i class="fa-solid fa-heart homelove">
+<!-- like  heart button -->
+                                    <%let num1 = 0; for (const element of data[i].reviews) { %> 
+                                        <%num1=element.rating+num1;%> 
+                                        <%  }%> 
+                                        <% if (data[i].reviews.length > 0) { %>
+                                            <%= num1 / data[i].reviews.length %> </i>
+                                        <% } else { %>
+                                            
+                                            0
+                                        <% } %> 
+                                </i>
+                                 
+                                <h5 class="card-title"><%= data[i].title %></h5>
+                                <p class="card-text flex-grow-1"><%= data[i].state %></p>
+                               
+                                
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <% } %>
+        </div> <!-- End of the row -->
+    </div>
+    <script src="/js/filter.js"></script>
+   
+</body>

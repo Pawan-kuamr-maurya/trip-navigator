@@ -1,0 +1,87 @@
+<% layout("allthing/boiler/boiler.ejs") %>
+<body>
+ 
+    <h1 class="px-5 offset-2">edit theam</h1>
+   <div class="row">
+    <div class="col-8 offset-2">
+      <form class="px-5" method="post" action='/allthing/listing/<%=data._id%>/edit'  >
+        <div> <label for="" class="form-lable mb-2"></label>   Titel  <input   class="form-control"   type="text" name="listing[title]"  value="<%=data.title  %>"> <br></div>
+        <div>  <label for="" class="form-lable mb-2"></label>   Image url<input  class="form-control"  type="url" name="listing[image]" value="<%=data.image  %>"><br></div>
+        <label for="tourist-places">Category</label>
+        <select id="tourist-places" class="form-select form-select-sm" required name="listing[category]">
+          <option value="" disabled <% if (data.category === '') { %> selected <% } %>>Select one...</option>
+          <option value="Temple" <% if (data.category === 'Temple') { %> selected <% } %>>Temple</option>
+          <option value="Beach" <% if (data.category === 'Beach') { %> selected <% } %>>Beach</option>
+          <option value="Hill station" <% if (data.category === 'Hill station') { %> selected <% } %>>Hill Station</option>
+          <option value="Water Park" <% if (data.category === 'Water Park') { %> selected <% } %>>Water Park</option>
+          <option value="Fort" <% if (data.category === 'Fort') { %> selected <% } %>>Fort</option>
+          <option value="National Park" <% if (data.category === 'National Park') { %> selected <% } %>>National Park</option>
+          <option value="Historical Site" <% if (data.category === 'Historical Site') { %> selected <% } %>>Historical Site</option>
+          <option value="Museum" <% if (data.category === 'Museum') { %> selected <% } %>>Museum</option>
+          <option value="Wildlife Sanctuary" <% if (data.category === 'Wildlife Sanctuary') { %> selected <% } %>>Wildlife Sanctuary</option>
+          <option value="Adventure Park" <% if (data.category === 'Adventure Park') { %> selected <% } %>>Adventure Park</option>
+          <option value="Cultural Village" <% if (data.category === 'Cultural Village') { %> selected <% } %>>Cultural Village</option>
+          <option value="Scenic Viewpoint" <% if (data.category === 'Scenic Viewpoint') { %> selected <% } %>>Scenic Viewpoint</option>
+          <option value="Amusement Park" <% if (data.category === 'Amusement Park') { %> selected <% } %>>Amusement Park</option>
+          <option value="Botanical Garden" <% if (data.category === 'Botanical Garden') { %> selected <% } %>>Botanical Garden</option>
+          <option value="Lakeside Resort" <% if (data.category === 'Lakeside Resort') { %> selected <% } %>>Lakeside Resort</option>
+          <option value="Cave" <% if (data.category === 'Cave') { %> selected <% } %>>Cave</option>
+          <option value="Stadium" <% if (data.category === 'Stadium') { %> selected <% } %>>Stadium</option>
+          <option value="Aquarium" <% if (data.category === 'Aquarium') { %> selected <% } %>>Aquarium</option>
+          <option value="Spa and Wellness Center" <% if (data.category === 'Spa and Wellness Center') { %> selected <% } %>>Spa and Wellness Center</option>
+          <option value="Mountain Range" <% if (data.category === 'Mountain Range') { %> selected <% } %>>Mountain Range</option>
+          <option value="Street Market" <% if (data.category === 'Street Market') { %> selected <% } %>>Street Market</option>
+          <option value="Art Gallery" <% if (data.category === 'Art Gallery') { %> selected <% } %>>Art Gallery</option>
+          <option value="Theme Park" <% if (data.category === 'Theme Park') { %> selected <% } %>>Theme Park</option>
+          <option value="Nature Reserve" <% if (data.category === 'Nature Reserve') { %> selected <% } %>>Nature Reserve</option>
+          <option value="Skyscraper Observation Deck" <% if (data.category === 'Skyscraper Observation Deck') { %> selected <% } %>>Skyscraper Observation Deck</option>
+          <option value="Monument" <% if (data.category === 'Monument') { %> selected <% } %>>Monument</option>
+          <option value="Hot Springs" <% if (data.category === 'Hot Springs') { %> selected <% } %>>Hot Springs</option>
+          <option value="Zoological Park" <% if (data.category === 'Zoological Park') { %> selected <% } %>>Zoological Park</option>
+      </select>
+          
+      </select>
+        <div>  <label for="" class="form-lable mb-2"></label>   Description <textarea  class="form-control"  type="text" name="listing[description]" ><%= data.description %></textarea><br></div>
+        <div>  <label for="" class="form-lable mb-2"></label>   Ticket price <input   class="form-control" type="number" name="listing[ticketPrice]" value="<%=data.ticketPrice  %>"><br></div>
+        <div>  <label for="" class="form-lable mb-2"></label>   Location <input   class="form-control" type="text" name="listing[location]" value="<%=data.location  %>"><br></div>
+        <div>  <label for="" class="form-lable mb-2"></label>   Country <input   class="form-control" type="text" name="listing[state]"  value="<%=data.state  %>"><br></div>
+       
+         <div class="special">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" value="true" name="istrue">
+            <label class="form-check-label" for="flexSwitchCheckChecked">somthing special going to happen</label>
+        </div>
+        
+        <div id="additionalInput" class="mt-3" style="display: none;">
+            <label for="inputField" class="form-label">what is special</label>
+            <input type="text" class="form-control" id="inputField" placeholder="Enter something..." name="whatspeacial">
+        </div>
+        
+          
+         </div>
+       
+        <div>  <button type="submit" class="btn btn-danger  btn-lg pr-5 px-5 my-2">Edit</button>
+          </form>
+     </div>
+   </div>
+  
+</body>
+<script>
+document.querySelector(".btn-outline-success").addEventListener("click",(e)=>{
+    
+
+    document.querySelector(".userdetail").classList.toggle("display-none");
+})
+
+
+  const checkbox = document.getElementById('flexSwitchCheckChecked');
+  const additionalInput = document.getElementById('additionalInput');
+
+  checkbox.addEventListener('change', function() {
+      if (this.checked) {
+          additionalInput.style.display = 'block'; // Show input field
+      } else {
+          additionalInput.style.display = 'none'; // Hide input field
+      }
+  });
+</script>

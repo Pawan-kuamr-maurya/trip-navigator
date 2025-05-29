@@ -1,0 +1,177 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header */
+.filter {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+.filter i {
+    color: #FF4500;
+    margin-right: 5px;
+}
+.filter:hover i {
+    color: #FF6347;
+}
+
+/* Form & Filter Section */
+.cat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#place {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+}
+
+#place:focus {
+    box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.5);
+}
+
+.checkbox-container {
+    display: inline-block;
+    margin: 5px;
+}
+
+.checkbox-container label {
+    cursor: pointer;
+    font-size: 14px;
+    color: #555;
+}
+
+.checkbox-container input[type="checkbox"]:checked + label i {
+    color: #FF4500;
+}
+
+/* Search Button */
+button[type="submit"] {
+    background-color: #FF4500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #FF6347;
+}
+
+/* Card Styles */
+.allcard {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.allcard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+.card-text {
+    color: #666;
+}
+
+/* Heart Icon */
+.homelove {
+    color: #FF4500;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.homelove:hover {
+    color: #FF6347;
+}
+
+/* Filter Scroll Buttons */
+.scroll-btn {
+    background-color: #ddd;
+    color: #333;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.scroll-btn:hover {
+    background-color: #bbb;
+}
+
+/* Alert Message */
+.alert {
+    background-color: #FFF3CD;
+    color: #856404;
+    border-color: #FFEEBA;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.alert strong {
+    font-weight: bold;
+}
+
+.alert button {
+    color: #856404;
+}
+
+.alert button:hover {
+    color: #333;
+}
+
+/* Additional Enhancements */
+.container h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.homecard {
+    text-decoration: none;
+    color: inherit;
+}
+
+.homecard:hover .card-title {
+    color: #FF4500;
+}
+
+.homecard:hover .card-text {
+    color: #333;
+}

@@ -1,0 +1,202 @@
+<% layout("allthing/boiler/boiler.ejs") %>
+<body>
+  <% if((success_msg&&success_msg.length)){ %>
+
+    <div class="alert alert-primary" role="alert">
+      <%=success_msg %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  
+  
+    <% } %>
+    
+ 
+   
+       
+
+
+          <div class="card mb-4">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <div class="ratio ratio-16x9"> 
+                        <!-- remove the /image/ from image to restoer imge url -->
+                        <img src="<%= data.image %>" class="img-fluid rounded-start m-2" style="height: 250px; object-fit: cover;" alt="Image of <%= data.title %>">
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title d-flex justify-content-between align-items-center">
+                                <span><%= data.title %></span>
+                                <span>
+                                    <i class="bi bi-star-fill" style="color:rgb(243, 15, 15);"></i>
+                                    <i class="bi bi-star-half"></i>
+                                    <i class="bi bi-star"></i>
+                                </span>
+                            </h5>
+                           
+                            
+                            <p class="card-text"><strong>Ticket Price:</strong> <%= data.ticketPrice %></p>
+                            <p class="card-text"><strong>Location:</strong> <%= data.location %></p>
+                            <p class="card-text"><strong>State:</strong> <%= data.state %></p>
+                            <p class="card-text">Post by <strong><%= data.owner.name %></strong></p>
+                           
+                        </div>
+                        <div class="text-body-secondary d-flex align-items-center mt-3">
+                            <% if(currentuser&&currentuser.isAdmin==true){%> 
+                                <a class="btn btn-outline-warning me-2" href="/allthing/listing/<%= data._id %>/edit">Click here to edit</a>
+                                <form action="/allthing/listing/<%= data._id %>?_method=delete" method="post">
+                                    <button class="btn btn-danger">Delete</button>
+                                </form>
+                              </a><%} %>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1  ms-auto">
+                    <div class="d-flex flex-column" style="height: 100%;">
+                        <div class="p-2 flex-fill"></div>   
+                        <div class="p-2  flex-fill">  
+                            <%let num1 = 0; for (const element of data.reviews) { %> 
+                            <%  num1= element.rating+num1 %> 
+                            <%  }%> 
+                            <% if (data.reviews.length > 0) { %>
+                               <i class="fa-solid fa-heart homelove" style="position:static;"> <%= num1 / data.reviews.length %> </i>
+                            <% } else { %>
+                                
+                                <i class="fa-solid fa-heart homelove" style="position:static;"> 0 </i>
+                            <% } %>  </div>
+                      
+                       
+                        <div class="p-2  flex-fill"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="container-md"> 
+            <b>Discription</b>
+            <p class="card-text"><%= data.description %> </p></div>
+       
+
+
+         
+        
+
+         
+<% if(currentuser){ %>
+         <form action="/allthing/review/<%=data._id %>" method="post" class="container mt-4">
+          <div class="row mb-3">
+              <label for="rating" class="col-form-label">Rating</label>
+              <div class="col">
+                <fieldset class="starability-slot">
+  
+                    <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="0" checked aria-label="No rating." />
+                    <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+                    <label for="first-rate1" title="Terrible">1 star</label>
+                    <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                    <label for="first-rate2" title="Not good">2 stars</label>
+                    <input type="radio" id="first-rate3" name="review[rating]" value="3" /> 
+                    <label for="first-rate3" title="Average">3 stars</label>
+                    <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                    <label for="first-rate4" title="Very good">4 stars</label>
+                    <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                    <label for="first-rate5" title="Amazing">5 stars</label>
+                  </fieldset>
+                  <!-- all_css are copypaste avalable in public folder -->
+              </div>
+          </div>
+          <div class="mb-3">
+              <label for="comment" class="form-label">Comment</label>
+              <textarea name="review[comment]" id="comment" class="form-control" cols="30" rows="5" placeholder="What do you think?" required></textarea>
+          </div>
+          <div class="mb-3">
+              <label for="img" class="form-label">You can add image URL</label>
+              <input type="url" class="form-control" name="review[image]" id="img" placeholder="https://example.com/image.jpg">
+          </div>
+          <button type="submit" class="btn btn-outline-primary mt-2">Submit Review</button>
+      </form>
+     
+
+<% } %>
+
+
+<div class="px-4  py-4">
+  <h2 class="text-center">best near hotel</h2>
+
+<div class="scrolling-wrapper">
+      <div class="card-h">
+          <img src="https://via.placeholder.com/250" class="card-img-top" alt="Product Image">
+          <div class="card-body-h">
+              <p class="card-title"><b>Product Title 1</b></p>
+              <p class="card-text">Distance: 5 miles</p>
+              <p class="card-text">Price: $100</p>
+              <p class="card-text">Rating: 4⭐</p>
+          </div>
+      </div>
+      
+    <!-- more card here-->
+  </div>
+</div>
+
+
+                                        
+                   <div class="review">
+                    <div class="container">
+                    <div class="accordion" id="accordionExample">
+                    <div class="row">
+                    <div class="col-md-12">
+                    <div class="p-3 d-flex flex-column">
+                        <% for (const element of data.reviews) { %> 
+                          <div class="review-item border rounded p-3 mb-2"> <!-- Card-like style for each review -->
+                           <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                    <b><%= element.reviewby.name  %></b> <!-- Assuming userName is part of element -->
+                                                    &nbsp;&nbsp;<span style="font-size: 100%; color: red;"> 
+                                                        <% for (let index = 0; index < element.rating; index++) { %>  ♥    <% } %>
+                                                            
+                                                    &nbsp;&nbsp; 
+                                                      
+                                                  
+                                                </div>
+                                                <span class="datepost text-muted">
+                                                    <%= element.createdAt.toString().substring(0, 25) %>
+                                                </span>
+                                            </div>
+                                            <p class="mt-2"><%= element.comment %></p> <!-- Add margin for better spacing -->
+                                            <form action="/allthing/listing/<%= data._id %>/review/<%= element._id %>?_method=delete" method="post" class="d-inline"> <!-- Inline form for delete button -->
+                                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                            </form>
+                                        </div>
+                                        <hr> 
+                                        <% } %> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>         
+   
+
+             <div class="map container ">
+                <div class="row justify-content-center">
+ <iframe class="embed-responsive-item" src = "https://maps.google.com/maps?q=<%= data.latitude %>,<%= data.longitude %>&hl=en&z=14&amp&output=embed" height="300px" loading="lazy"></iframe>
+
+                </div>
+               
+             </div>
+
+            <!-- <iframe class="embed-responsive-item" src = "https://www.openstreetmap.org/search?query=hotel+near+india+gate#map=18/28.632704/77.220755" height="300px" loading="lazy"></iframe> -->
+            <script >
+document.querySelector(".btn-outline-success").addEventListener("click",(e)=>{
+    
+
+    document.querySelector(".userdetail").classList.toggle("display-none");
+})
+
+            </script>
+            </body>
+
